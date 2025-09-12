@@ -2,6 +2,12 @@
 A miniature Autograd engine
 
 ## Getting Started
+### Prerequisites
+#### Graphviz
+```
+brew install graphviz
+```
+
 ### Installation
 1. Clone this repository
 ```
