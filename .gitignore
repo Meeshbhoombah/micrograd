@@ -1,3 +1,9 @@
+# Vim
+*.sw*
+
+# Virtual Environment
+micrograd
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
