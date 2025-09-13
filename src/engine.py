@@ -28,6 +28,9 @@ class Value:
 
         return out
 
+    def __sub__(self, other):
+        return self + (-other)
+
     def __mul__(self, other):
         other = other if ininstance(other, Value) else Value(other)
         out = Value(self.data * other.data, (self, other), '*')
