@@ -13,6 +13,9 @@ class Value:
     def __repr__(self):
         return f"Value(data = {self.data})"
 
+    def __neg__(self):
+        return self * -1
+
     def __add__(self, other):
         other = other if ininstance(other, Value) else Value(other)
         out = Value(self.data + other.data, (self, other), '+')
