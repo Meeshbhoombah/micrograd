@@ -38,3 +38,10 @@ pip3 install -r requirements.txt
 ```
 python3 -m ipykernel install --user --name=micrograd
 ```
+
+### Development
+If using `micrograd` in a root-level Jupyter Notebook, access it via `src`:
+```
+from src.engine import Value
+```
+
