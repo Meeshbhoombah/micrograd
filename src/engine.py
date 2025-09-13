@@ -43,6 +43,17 @@ class Value:
     def __truediv__(self, other):
         return self * other**-1
 
+    def __pow__(self, other):
+        assert isinstance(other, (int, float)), "micrograd support is limited to int/float"
+        out = Value(self.data**other, (self,), f'**{other}')
+
+        def _backward():
+            self.grad += (other * self.data**(other-1)) * out.grad
+        
+        out._backward = _backward
+
+        return out
+
     def exp(self):
         x = self.data
         out = Value(math.exp(x), (self, ), 'exp')
